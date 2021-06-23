@@ -20,13 +20,11 @@ RUN apt-get update && apt-get install -y mc git
 # WORKDIR $HOME
 
 # USER gitpod
-RUN git clone https://github.com/crystaluniverse/publishtools.git
-RUN cd /home/gitpod/publishtools
-RUN pwd
-ADD /home/gitpod/publishtools/install.sh /tmp/install.sh
-ADD /home/gitpod/publishtools/build.sh /tmp/build.sh
-ADD /home/gitpod/publishtools/publishtools/ /tmp/publishtools/
 
+RUN cd /home/gitpod && git clone https://github.com/crystaluniverse/publishtools.git \
+    && cp /home/gitpod/publishtools/install.sh /tmp/install.sh \
+    && cp /home/gitpod/publishtools/build.sh /tmp/build.sh \
+    && cp -r /home/gitpod/publishtools/publishtools/ /tmp/publishtools/
 RUN bash /tmp/install.sh
 RUN cd /tmp && bash /tmp/build.sh
 
