@@ -3,7 +3,8 @@ FROM gitpod/workspace-full:latest
 
 # Install postgres
 USER root
-RUN apt-get update && apt-get install -y redis-server mc git
+RUN apt-get update && apt install -y redis
+RUN apt-get update && apt-get install -y mc git
 
 # RUN apt-get update && \
 #     apt-get install -yq sudo
