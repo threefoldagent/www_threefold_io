@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y redis-server mc
 # USER gitpod
 RUN git clone https://github.com/crystaluniverse/publishtools.git
 RUN git clone https://github.com/hossnys/www_threefold_io.git
-RUN PWD
+RUN pwd
 RUN cd  ~/publishtools
 ADD install.sh /tmp/install.sh
 ADD build.sh /tmp/build.sh
