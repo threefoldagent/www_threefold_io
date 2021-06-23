@@ -1,5 +1,5 @@
 image:
-  file: https://github.com/crystaluniverse/publishtools/blob/development/.gitpod.Dockerfile
+  file: .gitpod.Dockerfile
 # # Commands to start on workspace startup
 tasks:
 #   - init: bash prepare.sh
