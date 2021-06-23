@@ -24,9 +24,9 @@ RUN git clone https://github.com/crystaluniverse/publishtools.git
 RUN git clone https://github.com/hossnys/www_threefold_io.git
 RUN cd /home/gitpod/publishtools
 RUN pwd
-ADD install.sh /tmp/install.sh
-ADD build.sh /tmp/build.sh
-ADD publishtools/ /tmp/publishtools/
+ADD /home/gitpod/publishtools/install.sh /tmp/install.sh
+ADD /home/gitpod/publishtools/build.sh /tmp/build.sh
+ADD /home/gitpod/publishtools/publishtools/ /tmp/publishtools/
 
 RUN bash /tmp/install.sh
 RUN cd /tmp && bash /tmp/build.sh
