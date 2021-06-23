@@ -4,7 +4,7 @@ image:
 tasks:
 #   - init: bash prepare.sh
 #     - command: sudo /etc/init.d/redis-server start && publishtools develop
-    - command: sudo /etc/init.d/redis-server start && cd www_threefold_io && publishtools develop    
+    - command: sudo /etc/init.d/redis-server start && cd ~/www_threefold_io && publishtools develop --repo www_threefold_io   
 ports:
   - port: 9998
     onOpen: open-browser
