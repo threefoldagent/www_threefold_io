@@ -33,9 +33,5 @@ RUN cd /tmp && bash /tmp/build.sh
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 USER gitpod
-RUN cd ~/www_threefold_io
-RUN publishtools develop --repo www_threefold_o
-#need to do 2 times, leave as this
-
 
 ENTRYPOINT [ "entrypoint.sh" ]
