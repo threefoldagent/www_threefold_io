@@ -3,8 +3,7 @@ FROM gitpod/workspace-full:latest
 
 # Install postgres
 USER root
-RUN apt-get update && apt-get install -y redis-server mc
-
+RUN apt-get update && apt-get install -y redis-server mc git
 
 # RUN apt-get update && \
 #     apt-get install -yq sudo
@@ -21,7 +20,6 @@ RUN apt-get update && apt-get install -y redis-server mc
 
 # USER gitpod
 RUN git clone https://github.com/crystaluniverse/publishtools.git
-RUN git clone https://github.com/hossnys/www_threefold_io.git
 RUN cd /home/gitpod/publishtools
 RUN pwd
 ADD /home/gitpod/publishtools/install.sh /tmp/install.sh
