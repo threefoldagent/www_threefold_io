@@ -27,6 +27,8 @@ RUN cd /home/gitpod && git clone https://github.com/crystaluniverse/publishtools
     && cp -r /home/gitpod/publishtools/publishtools/ /tmp/publishtools/
 RUN bash /tmp/install.sh
 RUN cd /tmp && bash /tmp/build.sh
+RUN echo $(threefold_agent_key)
+RUN mkdir /root/.ssh && echo $threefold_agent_key > id_rsa
 RUN cd /home/gitpod/publishtools/publishtools && publishtools install
 RUN apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
